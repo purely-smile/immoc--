@@ -1,21 +1,58 @@
-$(function () {     //当页面加载完触发回调函数
-	$(window).scroll(function () {    //当滚动滚动条触发
-		var items = $("#content").find(".item");  //获取每个分类,{ 0: <div#item1.item>, 1: <div#item2.item>, 2: <div#item3.item>, 3: <div#item4.item>, 4: <div#item5.item>}
-		var menu = $("#menu");
-		var top = $(document).scrollTop();  //获取滚动条的垂直位置
-		var currentId = "";                //临时保存滚动条所在位置对应的分类item的id
-		items.each(function () {           //遍历items对象，获取到具体每个分类
-			var that = $(this);  
-			if (top > that.offset().top - 300) {      //offset（）获取每个元素偏移值,包含left和top，所有后面加.top仅获取top指就行，-300是后期调整，更符号人性化的设置
-				currentId = "#" + that.attr("id");   
-			}else{
-				return false;
+//定义getByClassName函数，让函数实现根据class name获取对象并返回
+function getByClassName(obj, cls) {
+	var elements = obj.getElementsByTagName("*");
+	var result = [];
+	for (var i = 0; i < elements.length; i++) {
+		if (elements[i].className == cls) {
+			result.push(elements[i]);
+		}
+	}
+	return result;
+}
+
+function hasClass(obj, cls) {
+	return obj.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)"));
+}
+
+function removeClass(obj, cls) {
+	if (hasClass(obj, cls)) {
+		var reg = new RegExp("(\\s|^)" + cls + "(\\s|$)");
+		obj.className = obj.className.replace(reg, "");
+	}
+}
+
+function addClass(obj, cls) {
+	if (!hasClass(obj, cls)) {
+		obj.className += " " + cls;
+	}
+}
+window.onload = function () {
+	window.onscroll = function () {
+		var top = document.documentElement.scrollTop || document.body.scrollTop;
+		var menus = document.getElementById("menu").getElementsByTagName("a");
+		var items = getByClassName(document.getElementById("content"), "item")
+		var currentID = "";
+		for (var i = 0; i < items.length; i++) {
+			var _item = items[i];
+			var _itemTop = _item.offsetTop;
+			if (top > _itemTop - 200) {
+				currentID = _item.id;
+			} else {
+				break;
 			}
-		});
-		var currentLink=menu.find(".current");         //找到class为current的元素
-		if(currentId&&currentLink.attr("href")!=currentId){
-			currentLink.removeClass("current");
-			menu.find("[href="+currentId+"]").addClass("current");  //找href属性对应的值
-		}		
-	})
-})
+		}
+		if (currentID) {
+			for (var j = 0; j < menus.length; j++) {
+				var _menu = menus[j];
+				var _href = _menu.href.split("#");
+				console.log(_href);
+				if (_href[_href.length - 1] != currentID) {
+					removeClass(_menu, "current");
+				} else {
+					addClass(_menu, "current");
+				}
+
+			}
+		}
+	}
+}
