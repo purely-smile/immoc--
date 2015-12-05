@@ -1,19 +1,19 @@
 //定义getByClassName函数，让函数实现根据class name获取对象并返回
 
 function getByClassName(obj, cls) {
-	var elements = obj.getElementsByTagName("*");
-	var result = [];
-	for (var i = 0; i < elements.length; i++) {
-		if (elements[i].className == cls) {
-			result.push(elements[i]);
+	var elements = obj.getElementsByTagName("*");     //获取obj所有的子标签，如[ <h1>, <div#item1.item>, <h2>, <ul>, <li>, <a>, <img>
+		var result = [];                                  //定义一个空数组，
+	for (var i = 0; i < elements.length; i++) {      //遍历所有的子标签
+		if (elements[i].className == cls) {         //找子标签class=cls的标签，
+			result.push(elements[i]);              //然后push到，上面定义的空数组里
 		}
 	}
-	return result;
+	return result;                      //结合本例，result的值为[ <div#item1.item>, <div#item2.item>, <div#item3.item>, <div#item4.item>, <div#item5.item> ]
 }
 //判断obj标签里是否有class为cls，如果有则返回匹配到的结果
 
 function hasClass(obj, cls) {
-	return obj.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)"));
+	return obj.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)")); //匹配cls，根据match里面的规则，就是变量cls前后各有一个空格的值
 }
 //移除已存在的指定class属性值
 
@@ -34,7 +34,7 @@ window.onload = function () {
 	window.onscroll = function () {
 		var top = document.documentElement.scrollTop || document.body.scrollTop;
 		var menus = document.getElementById("menu").getElementsByTagName("a");
-		var items = getByClassName(document.getElementById("content"), "item")
+		var items = getByClassName(document.getElementById("content"), "item")   //获取class=content里面所有子元素的class=item的div
 		var currentId = "";
 		for (var i = 0; i < items.length; i++) {
 			var _item = items[i];
