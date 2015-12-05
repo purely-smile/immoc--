@@ -1,61 +1,21 @@
-//定义getByClassName函数，让函数实现根据class name获取对象并返回
-
-function getByClassName(obj, cls) {
-	var elements = obj.getElementsByTagName("*");     //获取obj所有的子标签，如[ <h1>, <div#item1.item>, <h2>, <ul>, <li>, <a>, <img>
-		var result = [];                                  //定义一个空数组，
-	for (var i = 0; i < elements.length; i++) {      //遍历所有的子标签
-		if (elements[i].className == cls) {         //找子标签class=cls的标签，
-			result.push(elements[i]);              //然后push到，上面定义的空数组里
-		}
-	}
-	return result;                      //结合本例，result的值为[ <div#item1.item>, <div#item2.item>, <div#item3.item>, <div#item4.item>, <div#item5.item> ]
-}
-//判断obj标签里是否有class为cls，如果有则返回匹配到的结果
-
-function hasClass(obj, cls) {
-	return obj.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)")); //匹配cls，根据match里面的规则，就是变量cls前后各有一个空格的值
-}
-//移除已存在的指定class属性值
-
-function removeClass(obj, cls) {
-	if (hasClass(obj, cls)) {                               //先调用hasClass()方法判断是否有class值，如果已经没了，就直接跳出
-		var reg = new RegExp("(\\s|^)" + cls + "(\\s|$)"); //定义一个正则表达式
-		obj.className = obj.className.replace(reg, "");//然后用正则表达式匹配，然后替换为空，到达替换的目的
-	}
-}
-//增加class属性值
-
-function addClass(obj, cls) {                            
-	if (!hasClass(obj, cls)) {                             //先调用hasClass()方法判断是否为空，如为空就添加     
-		obj.className += " " + cls;   //" "这里的空格最好要加上，虽然这里有没都行，如果class里面已经有数值来，再增加的话，就要格一个空格了。
-	}
-}
-window.onload = function () {                           //页面载入后执行
-	window.onscroll = function () {                     //滚动条移动执行
-		var top = document.documentElement.scrollTop || document.body.scrollTop;  //获取滚动条的位置。涉及到兼容性，详见http://blog.csdn.net/tfgdd/article/details/5182033
-		var menus = document.getElementById("menu").getElementsByTagName("a");   //获取menu标签下的，a便签集合
-		var items = getByClassName(document.getElementById("content"), "item")   //获取class=content里面所有子元素的class=item的div
-		var currentId = "";
-		for (var i = 0; i < items.length; i++) {                               //遍历数组items
-			var _item = items[i];
-			var _itemTop = _item.offsetTop;
-			if (top > _itemTop - 200) {                                       //判断滚动条的位置，和获取到的div距离top的大小
-				currentId = _item.id;
-			} else {
-				break;                                                          //跳出循环
+$(function () {     //当页面加载完触发回调函数
+	$(window).scroll(function () {    //当滚动滚动条触发
+		var items = $("#content").find(".item");  //获取每个分类,{ 0: <div#item1.item>, 1: <div#item2.item>, 2: <div#item3.item>, 3: <div#item4.item>, 4: <div#item5.item>}
+		var menu = $("#menu");
+		var top = $(document).scrollTop();  //获取滚动条的垂直位置
+		var currentId = "";                //临时保存滚动条所在位置对应的分类item的id
+		items.each(function () {           //遍历items对象，获取到具体每个分类
+			var that = $(this);  
+			if (top > that.offset().top - 300) {      //offset（）获取每个元素偏移值,包含left和top，所有后面加.top仅获取top指就行，-300是后期调整，更符号人性化的设置
+				currentId = "#" + that.attr("id");   
+			}else{
+				return false;
 			}
-		}
-		if (currentId) {
-			for (var j = 0; j < menus.length; j++) {
-				var _menu = menus[j];
-				var _href = _menu.href.split("#");
-				if (_href[_href.length - 1] != currentId) {                   //判断是否是获取的currentId，然后移除或者添加对应的属性
-					removeClass(_menu, "current");
-				} else {
-					addClass(_menu, "current");
-				}
-
-			}
-		}
-	}
-}
+		});
+		var currentLink=menu.find(".current");         //找到class为current的元素
+		if(currentId&&currentLink.attr("href")!=currentId){
+			currentLink.removeClass("current");
+			menu.find("[href="+currentId+"]").addClass("current");  //找href属性对应的值
+		}		
+	})
+})
