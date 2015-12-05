@@ -30,26 +30,26 @@ function addClass(obj, cls) {
 		obj.className += " " + cls;   //" "这里的空格最好要加上，虽然这里有没都行，如果class里面已经有数值来，再增加的话，就要格一个空格了。
 	}
 }
-window.onload = function () {
-	window.onscroll = function () {
-		var top = document.documentElement.scrollTop || document.body.scrollTop;
-		var menus = document.getElementById("menu").getElementsByTagName("a");
+window.onload = function () {                           //页面载入后执行
+	window.onscroll = function () {                     //滚动条移动执行
+		var top = document.documentElement.scrollTop || document.body.scrollTop;  //获取滚动条的位置。涉及到兼容性，详见http://blog.csdn.net/tfgdd/article/details/5182033
+		var menus = document.getElementById("menu").getElementsByTagName("a");   //获取menu标签下的，a便签集合
 		var items = getByClassName(document.getElementById("content"), "item")   //获取class=content里面所有子元素的class=item的div
 		var currentId = "";
-		for (var i = 0; i < items.length; i++) {
+		for (var i = 0; i < items.length; i++) {                               //遍历数组items
 			var _item = items[i];
 			var _itemTop = _item.offsetTop;
-			if (top > _itemTop - 200) {
+			if (top > _itemTop - 200) {                                       //判断滚动条的位置，和获取到的div距离top的大小
 				currentId = _item.id;
 			} else {
-				break;
+				break;                                                          //跳出循环
 			}
 		}
 		if (currentId) {
 			for (var j = 0; j < menus.length; j++) {
 				var _menu = menus[j];
 				var _href = _menu.href.split("#");
-				if (_href[_href.length - 1] != currentId) {
+				if (_href[_href.length - 1] != currentId) {                   //判断是否是获取的currentId，然后移除或者添加对应的属性
 					removeClass(_menu, "current");
 				} else {
 					addClass(_menu, "current");
