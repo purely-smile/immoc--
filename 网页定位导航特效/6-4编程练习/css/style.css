@@ -1,0 +1,75 @@
+*{
+	margin: 0;           /*重置浏览器样式设置*/
+	padding: 0;    
+}
+body{
+	font-size:12px;     /*设置body里文字的字体大小*/
+	line-height: 1.7;   /*设置行距*/
+}
+li{
+	list-style:none; /*去除所有li列表的点号，这里是这是所有的，其他需要特别设置的，得用指定到特定位置的选择符才可以设置*/
+}
+#content{
+	width: 800px;
+	margin: 0 auto;  /*让正文居中显示*/
+	padding: 20px;    /*距离边框的距离*/
+}
+#content h1{                 /*设置购物网的标题样式*/
+	color: #0088bb;
+}
+#content .item{             /*设置每个分类，如男装女装的样式*/
+	padding: 20px;
+	margin-bottom: 20px;
+	border:1px dotted #0088bb;
+}
+#content .item h2{            /*设置分类里面标题的样式*/
+	font-size: 16px;
+	font-weight: bold;
+	border-bottom: 2px solid #0088bb;    /*设置h2标题下面的一条横线*/
+	margin-bottom: 10px;                    /*设置下边距10px，和下面的图片保持点距离*/
+}
+#content .item li{               /*让li列表里面的图片在一行显示*/
+	display: inline;
+	margin-right: 10px;            /*设置相邻图片的间距*/
+}
+#content .item li a img{                /*设置图片大小，同时去除了边框*/
+	width:230px;
+	height: 230px;
+	border:none;
+}
+#menu{
+	position: fixed;              /*导航条*/
+	top:100px;
+	left:50%;                   /*先让他居中*/
+	margin-left: 400px;         /*然后根据居中的位置，调整相对父级的位置*/
+	width:50px;
+}
+#menu ul li a{                 /*设置导航条里面a标签的样式*/
+	display: block;            /*a标签从内联样式变为块级元素，具有调整大小的属性，次元素前后会带有换行符*/
+	margin:5px 0;              /*调整上下间距*/
+	font-size: 14px;            /*调整字号*/
+	font-weight: bold;         /*粗体显示*/
+	color: #333;             /*颜色*/
+	width: 80px;               /*设置宽度*/
+	height: 50px;              /*高度*/
+	line-height: 50px;         /*设置行高*/
+	text-decoration: none;     /*去除a标签的默认下划线*/
+	text-align: center;         /*文本居中显示*/
+}
+/*下面设置的是hover属性，同时激活class为current的默认属性*/
+#menu ul li a:hover,
+#menu ul li a.current{
+	color: #fff;
+	background: #0088bb;
+}
+/*IE6兼容性设置，帮助固定菜单无抖动显示*/
+
+* html,* html body{
+	background-image: url(about:blank);
+	background-attachment: fixed;
+}
+* html #menu{            /*其实感觉没必要这么兼容IE6，都淘汰的浏览器了*/
+	position: absolute;
+	bottom: auto;
+	top: expression(100+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');
+}
