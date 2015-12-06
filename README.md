@@ -5,3 +5,4 @@
 1. 网页定位导航特效 http://www.imooc.com/learn/56
 
 2. 如何实现“新手引导”效果 http://www.imooc.com/learn/14
+	还不会设置触发新手引导界面时禁止滚动条移动，然后完成后恢复。

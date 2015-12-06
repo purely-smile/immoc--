@@ -1,0 +1,134 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+html{
+	height: 230%;
+}
+
+body{
+	background: url(images/body.png) center top no-repeat;
+	height: 100%;
+}
+
+#mask{
+	height: 100%;
+	width:100%;
+	background: #000; 
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+	position: absolute;
+	left:0;
+	top:0;
+	display: none;
+}
+
+#searchTip{
+	width:980px;
+	height: 800px;
+	margin:0 auto;
+	position: relative;
+	display: none;
+}
+
+#searchTip div{
+	position: absolute;
+	display: none;
+}
+#searchTip div a{
+	position: absolute;
+	width: 96px;
+	height: 32px;
+	cursor: pointer;
+	text-indent: -999px;
+	overflow: hidden;
+}
+
+#searchTip div span{
+	position: absolute;
+	cursor: pointer;
+	width:30px;
+	height: 30px;
+	text-indent:  -999px;
+	overflow: hidden;	
+}
+
+.step1{
+	height: 329px;
+	width: 745px;
+	background: url(images/guide11.png);
+	top:129px;
+	left:-9px;
+}
+.step1 a{
+	left:490px;
+	top:230px;
+}
+.step1 span{
+	left:682px;
+	top:140px;
+}
+.step2{
+	height: 405px;
+	width: 647px;
+	background: url(images/guide21.png);
+	left:324px;
+	top:4px;
+}
+
+.step2 a{
+	left:145px;
+	top:306px;
+}
+.step2 span{
+	left:331px;
+	top:194px;
+}
+
+.step3{
+	height: 257px;
+	width: 654px;
+	background: url(images/guide31.png);
+	left:319px;
+	top:294px;
+}
+
+.step3 a{
+	left:401px;
+	top:154px;
+}
+.step3 span{
+
+	left:588px;
+	top:44px;
+}
+
+.step4{
+	height: 348px;
+	width: 558px;
+	background: url(images/guide41.png);
+	left:163px;
+	top:79px;
+}
+.step4 a{
+	left:305px;
+	top:245px;
+}
+.step4 span{
+	left:492px;
+	top:133px;
+}
+
+.step5{
+	height: 342px;
+	width:397px;
+	background: url(images/guide51.png);
+	left: 257px;
+	top:78px;
+}
+.step5 a{
+	left:152px;
+	top:245px;
+	
+}

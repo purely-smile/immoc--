@@ -5,9 +5,9 @@ window.onload = function () {                                     //页面载入
 	var aA = oSearch.getElementsByTagName("a");                 //获取searchTip这个div里的a标签，这里是多个，所有是个数组
 	var aClose = oSearch.getElementsByTagName("span");		  //获取searchTip这个div里的span标签，这里是多个，所有是个数组
 	
-	var res = document.cookie.substring(5);                     	//读取cookie
-	console.log(document.cookie);
-	if (res = "www.open.com.cn") {                                  	//判断是否来过
+	var res=document.cookie.substring(5);                     	//读取cookie
+	console.log(res);
+	if (res!= "www.open.com.cn") {                                  	//判断是否来过
 		oMask.style.display = oSearch.style.display = aStep[0].style.display = "block";    //设置蒙版和第一个引导为block(css里设置了none)
 
 		for (var i = 0; i < aStep.length; i++) {                        //遍历5个新手引导的子div
@@ -31,9 +31,8 @@ window.onload = function () {                                     //页面载入
 			}
 		}
 		//同时添加cookie
-		var oDate = new Date();                 //定义oDate对象，初始化为当前时间
-		
-		oDate.setDate(oDate.getDate() + 30);   //给odate设置了，30天后。
-		document.cookie = "name=www.open.com.cn;expires=" + oDate; //加入到cookie中。
+	var oDate=new Date();
+	oDate.setDate(oDate.getDate()+30);
+	document.cookie="name=www.open.com.cn;expires="+oDate;//加入到cookie中。
 	}
 }
