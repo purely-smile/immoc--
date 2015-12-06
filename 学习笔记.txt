@@ -65,3 +65,9 @@
 34. 又遇到个神级bug，<a href=></a>,如果用a标签绑定click事件，千万不要带href，不然每点击一次触发一次刷新。
 35. aStep[i].onclick=function(){} 绑定点击事件。
 36. document.cookie="name=www.open.com.cn;expires="+oDate;设置cookie，时间为oDate；
+37. var aAs=$("#main a");使用jQuery，获取id=main标签的里a标签
+38. $("a").click(function(){})  为每个a绑定click事件。
+	var currentStep=$(this).parent();       //获取当前点击的a标签的父元素
+39. var oDate=new Date(); oDate.setDate(oDate.getDate()+30);
+	document.cookie="name=www.open.com.cn;expires="+oDate;
+		设置cookie name=www.open.com.cn，有效期一个月
