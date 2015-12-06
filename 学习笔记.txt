@@ -63,3 +63,5 @@
 32. background: #00FF00 url(bgimage.gif) no-repeat fixed top;  no-repeat,背景图不重复。
 33. 在《新手引导这里》，由于图省事，遇上了给自己造的最大的bug，demo里面用的是stepA属性，而我一开始排版图省事儿，用的step1，写css的时候忘记了，按照来，结果找了一个小时的bug。
 34. 又遇到个神级bug，<a href=></a>,如果用a标签绑定click事件，千万不要带href，不然每点击一次触发一次刷新。
+35. aStep[i].onclick=function(){} 绑定点击事件。
+36. document.cookie="name=www.open.com.cn;expires="+oDate;设置cookie，时间为oDate；
