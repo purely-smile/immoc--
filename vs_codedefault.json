@@ -1,0 +1,508 @@
+// Overwrite settings by placing them into your settings file.
+//在你的设置文件里重新设置
+{
+
+	//-------- Editor configuration ---编辑配置-----
+
+	// Controls the font family. 设置元素的字体
+	"editor.fontFamily": "",
+
+	// Controls the font size.  设置字体大小
+	"editor.fontSize": 0,
+
+	// Controls the line height.   设置行高
+	"editor.lineHeight": 0,
+
+	// Controls visibility of line numbers 控制线数的可视度
+	"editor.lineNumbers": true,
+
+	// Controls visibility of the glyph margin 控制符号边缘的可见性
+	"editor.glyphMargin": false,
+
+	// Controls the rendering size of tabs in characters. Accepted values: "auto", 2, 4, 6, etc. If set to "auto", the value will be guessed when a file is opened.控制字符的制表符的绘制大小。接受的值：“自动”，4，2，6等。如果设置为“自动”，当一个文件被打开时，该值将被猜测
+	"editor.tabSize": "auto",
+
+	// Controls if the editor will insert spaces for tabs. Accepted values:  "auto", true, false. If set to "auto", the value will be guessed when a file is opened.控制如果编辑器将插入空格符。可接受的值：“自动”，true，false。如果设置为“自动”，则在打开文件时，该值将被猜测
+	"editor.insertSpaces": "auto",  //插入空格
+
+	// Controls if selections have rounded corners 控制如果选择有圆角
+	"editor.roundedSelection": true,
+
+	// Controls if the editor will scroll beyond the last line 控制是否将滚动越过最后一行的编辑
+	"editor.scrollBeyondLastLine": true,
+
+	// Controls after how many characters the editor will wrap to the next line. Setting this to 0 turns on viewport width wrapping 编辑了多少个字符后，将会换行。如果设置为0都是自动换行。
+	"editor.wrappingColumn": 300,
+
+	// Controls the indentation of wrapped lines. Can be one of 'none', 'same' or 'indent'. 控制包装线的缩进。可以是“无”，“相同”或“缩进”
+	"editor.wrappingIndent": "same",
+
+	// A multiplier to be used on the `deltaX` and `deltaY` of mouse wheel scroll events   鼠标滚动一下移动几行
+	"editor.mouseWheelScrollSensitivity": 1,
+
+	// Controls if quick suggestions should show up or not while typing 设置如果在打字的时候，是否有快速提示。
+	"editor.quickSuggestions": true,
+
+	// Controls the delay in ms after which quick suggestions will show up 设置快速建议的延迟时间，单位毫秒。
+	"editor.quickSuggestionsDelay": 10,
+
+	// Controls if the editor should automatically close brackets after opening them 设置是否自动补全括号
+	"editor.autoClosingBrackets": true,
+
+	// Controls if the editor should automatically format the line after typing 控制是否应自动格式编辑后再行打字- 不懂
+	"editor.formatOnType": false,
+
+	// Controls if suggestions should automatically show up when typing trigger characters 当输入触发器字符时，应自动显示建议的控制
+	"editor.suggestOnTriggerCharacters": true,
+
+	// Controls whether the editor should highlight similar matches to the selection 编辑是否应该突出显示类似的匹配到选择
+	"editor.selectionHighlight": true,
+
+	// Controls the number of decorations that can show up at the same position in the overview ruler  在概述尺的相同位置上显示的装饰数
+	"editor.overviewRulerLanes": 3,
+
+	// Controls if the cursor should be hidden in the overview ruler. 如果光标应该藏在概览标尺中
+	"editor.hideCursorInOverviewRuler": false,
+
+	// Controls whether the editor should render whitespace characters 用点号显示空格区域，这样都知道多少个空格了
+	"editor.renderWhitespace": false,
+
+	// Controls if the editor shows reference information for the modes that support it 如果编辑器显示支持该模式的参考信息
+	"editor.referenceInfos": true,
+
+	// Controls if the diff editor shows the diff side by side or inline  不同的编辑器显示侧或内联的不同侧
+	"diffEditor.renderSideBySide": true,
+
+	// Controls if the diff editor shows changes in leading or trailing whitespace as diffs  不同的编辑器显示前导或尾随空格为差别的变化
+	"diffEditor.ignoreTrimWhitespace": true,
+
+
+	//-------- Window configuration   windows 配置--------
+
+	// When enabled, will open files in a new window instead of reusing an existing instance.  使用时，将打开的窗口不是 之前关闭前的样子
+	"window.openInNewWindow": true,
+
+	// Controls how folders are being reopened after a restart. Select 'none' to never reopen a folder, 'one' to reopen the last folder you worked on or 'all' to reopen all folders of your last session.       控制如何重新启动后重新打开文件夹。选择“none”再打开一个文件夹，“选择one打开你工作的最后一个文件夹，或者“all”打开你上一个会话的所有文件夹
+	"window.reopenFolders": "one",
+
+
+	//-------- Files configuration   文件配置--------
+
+	// Configure glob patterns for excluding files and folders.
+	"files.exclude": {
+		"**/.git": true,
+		"**/.DS_Store": true
+	},
+
+	// The default character set encoding to use when reading and writing files. 在读和写文件时使用的默认样式，utf-8
+	"files.encoding": "utf8",
+
+	// When enabled, will trim trailing whitespace when you save a file. 当启用是，在你保存文件的时候将会去掉尾部的空格
+	"files.trimTrailingWhitespace": false,
+
+
+	//-------- File Explorer configuration --------文件资源管理器配置
+
+	// Maximum number of working files to show before scrollbars appear.在滚动条出现之前，可显示的最大工作文件数
+	"explorer.workingFiles.maxVisible": 9,
+
+	// Controls if the height of the working files section should adapt dynamically to the number of elements or not.
+	"explorer.workingFiles.dynamicHeight": true,
+
+
+	//-------- HTTP configuration --------http配置
+
+	// The proxy setting to use. If not set will be taken from the http_proxy and https_proxy environment variables 使用的代理设置。如果没有设置将使用http_proxy和https_proxy环境变量
+	"http.proxy": "",
+
+
+	//-------- Search configuration --------搜索配置
+
+	// Configure glob patterns for excluding files and folders in searches. Inherits all glob patterns from the file.exclude setting. 在搜索的时候，配置通配符匹配的例外文件和文件夹
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/bower_components": true
+	},
+
+
+	//-------- Git configuration --------git配置
+
+	// Is git enabled   是否可用
+	"git.enabled": true,
+
+	// Path to the git executable git可执行路径
+	"git.path": null,
+
+	// Whether auto fetching is enabled.
+	"git.autofetch": true,
+
+
+	//-------- JavaScript configuration --------js配置
+
+	// Controls how JavaScript IntelliSense works.设置js如果智能工作
+
+	// Always include all words from the current document 总是包括当前文档的所有单词.
+	"javascript.suggest.alwaysAllWords": false,
+
+	// Complete functions with their parameter signature  用他们参数签名完成函数.
+	"javascript.suggest.useCodeSnippetsOnMethodSuggest": false,
+
+	// Controls how JavaScript validation works.设置js如何验证
+
+	// Controls VSCode's Javascript validation. If set to false both syntax and sematic validation is disabled控制vscode的JavaScript验证。如果设置为false，语法和语义验证被禁用
+	"javascript.validate.enable": true,
+
+	// Run linter checks for JavaScript files - overrides validate.lint.* settings.运行linter检查js文件。
+	"javascript.validate.semanticValidation": true,
+
+	// Check JavaScript files for syntax errors.检查JavaScript文件的语法错误
+	"javascript.validate.syntaxValidation": true,
+
+	// Controls various aspects of validation.控制验证的各个方面
+
+	// Don't spare curly brackets.  不要多余的花括号
+	"javascript.validate.lint.curlyBracketsMustNotBeOmitted": "ignore",
+
+		// Empty block should have a comment. 空块应该有注释
+	"javascript.validate.lint.emptyBlocksWithoutComment": "ignore",
+
+	// Use '!==' and '===' instead of '!=' and '=='.
+	"javascript.validate.lint.comparisonOperatorsNotStrict": "ignore",
+
+	// Missing semicolon. 缺少分号
+	"javascript.validate.lint.missingSemicolon": "ignore",
+
+	// Unexpected output of the 'typeof'-operator.
+	"javascript.validate.lint.unknownTypeOfResults": "warning",
+
+	// Semicolon instead of block.分号代替了快
+	"javascript.validate.lint.semicolonsInsteadOfBlocks": "ignore",
+
+	// Function inside loop.函数内部循环
+	"javascript.validate.lint.functionsInsideLoops": "ignore",
+
+	// Function with lowercase name used as constructor.用作构造函数的小写名称
+	"javascript.validate.lint.newOnLowercaseFunctions": "warning",
+
+	// Looks for mistyped triple-slash references.寻找错误三斜线引用
+	"javascript.validate.lint.tripleSlashReferenceAlike": "warning",
+
+	// Unused local variable.未用的局部变量
+	"javascript.validate.lint.unusedVariables": "warning",
+
+	// Unused local function.未用的局部函数
+	"javascript.validate.lint.unusedFunctions": "ignore",
+
+	// Parameter don't match a function signature 参数不匹配函数签名
+	"javascript.validate.lint.parametersDontMatchSignature": "ignore",
+
+	// Don't re-declare a variable and change its type.不要重新生命变量，同时改变他的类型
+	"javascript.validate.lint.redeclaredVariables": "warning",
+
+	// Don't use an undeclared variable.不要使用未声明的变量
+	"javascript.validate.lint.undeclaredVariables": "warning",
+
+	// Don't use an unknown property.不要使用一个未知的属性
+	"javascript.validate.lint.unknownProperty": "ignore",
+
+	// Don't require an unknown module.不要require一个位置的模块
+	"javascript.validate.lint.unknownModule": "ignore",
+
+	// Don't re-declare a variable type by an assignment.不要通过赋值重复声明变量
+	"javascript.validate.lint.forcedTypeConversion": "warning",
+
+	// Only use numbers for arithmetic operations.只使用算术运算的数字
+	"javascript.validate.lint.mixedTypesArithmetics": "warning",
+
+		// Don't use instanceof with primitive types.不要使用原始类型的实例
+	"javascript.validate.lint.primitivesInInstanceOf": "error",
+
+	// Function with return-statement used as constructor.用作构造函数的返回语句的函数
+	"javascript.validate.lint.newOnReturningFunctions": "warning",
+
+
+	//-------- JSON configuration    JSon配置--------
+
+	// Associate schemas to JSON files in the current project
+	"json.schemas": [
+		{
+			"fileMatch": [
+				"/bower.json",
+				"/.bower.json"
+			],
+			"url": "http://json.schemastore.org/bower"
+		},
+		{
+			"fileMatch": [
+				"/package.json"
+			],
+			"url": "http://json.schemastore.org/package"
+		},
+		{
+			"fileMatch": [
+				"/project.json"
+			],
+			"url": "http://json.schemastore.org/project"
+		},
+		{
+			"fileMatch": [
+				"*.schema.json"
+			],
+			"url": "http://json-schema.org/draft-04/schema#"
+		},
+		{
+			"fileMatch": [
+				"/global.json"
+			],
+			"url": "http://json.schemastore.org/global"
+		},
+		{
+			"fileMatch": [
+				"/tsconfig.json"
+			],
+			"url": "http://json.schemastore.org/tsconfig"
+		},
+		{
+			"fileMatch": [
+				"/jsconfig.json"
+			],
+			"url": "http://opentools.azurewebsites.net/jsconfig"
+		},
+		{
+			"fileMatch": [
+				"/.bowerrc"
+			],
+			"url": "http://json.schemastore.org/bowerrc"
+		},
+		{
+			"fileMatch": [
+				"/.jshintrc"
+			],
+			"url": "http://json.schemastore.org/jshintrc"
+		},
+		{
+			"fileMatch": [
+				"/.jscsrc"
+			],
+			"url": "http://json.schemastore.org/jscsrc"
+		}
+	],
+
+
+	//-------- CSS configuration --------css配置
+
+	// Controls CSS validation and problem severities.控制CSS验证和问题的严重程度
+
+	// Enables or disables all validations启用或禁用所有的验证
+	"css.validate": true,
+
+	// When using a vendor-specific prefix make sure to also include all other vendor-specific properties 当使用一个浏览器特定的前缀，确保也包括所有其他浏览器的具体属性
+	"css.lint.compatibleVendorPrefixes": "ignore",
+
+	// When using a vendor-specific prefix also include the standard property   当使用特定供应商的前缀时，还包括标准属性
+	"css.lint.vendorPrefix": "warning",
+
+	// Do not use duplicate style definitions  不要使用重复的样式定义
+	"css.lint.duplicateProperties": "ignore",
+
+	// Do not use empty rulesets 不要使用空白的规则集
+	"css.lint.emptyRules": "warning",
+
+	// Import statements do not load in parallel  不要并行加载import语句  不要并行加载import语句
+	"css.lint.importStatement": "ignore",
+
+	// Do not use width or height when using padding or border   使用padding或border时不使用宽度或高度
+	"css.lint.boxModel": "ignore",
+
+	// The universal selector (*) is known to be slow  通用选择器（*）被称为是缓慢的
+	"css.lint.universalSelector": "ignore",
+
+	// No unit for zero needed
+	"css.lint.zeroUnits": "ignore",
+
+	// @font-face rule must define 'src' and 'font-family' properties   @font-face 规则必须定义'src'和字体属性
+	"css.lint.fontFaceProperties": "warning",
+
+	// Hex colors must consist of three or six hex numbers  十六进制颜色必须由三个或六个十六进制数字组成
+	"css.lint.hexColorLength": "error",
+
+	// Invalid number of parameters  参数无效
+	"css.lint.argumentsInColorFunction": "error",
+
+	// Unknown property.   未知属性
+	"css.lint.unknownProperties": "warning",
+
+	// IE hacks are only necessary when supporting IE7 and older  IE的hacks只需要在支持IE7以上
+	"css.lint.ieHack": "ignore",
+
+	// Unknown vendor specific property.  不明厂商的具体属性
+	"css.lint.unknownVendorSpecificProperties": "ignore",
+
+	// Property is ignored due to the display. E.g. with 'display: inline', the width, height, margin-top, margin-bottom, and float properties have no effect 由于显示属性被忽略。与“显示：行”，宽度，高度，边顶，边底，浮动性能没有影响
+	"css.lint.propertyIgnoredDueToDisplay": "warning",
+
+	// Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.   避免使用!important。这是一个迹象表明，整个CSS的特异性已经得到了控制，需要重构
+	"css.lint.important": "ignore",
+
+	// Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.  避免使用“浮动”。漂浮导致脆弱的CSS很容易如果布局变化的一个方面突破
+	"css.lint.float": "ignore",
+
+	// Selectors should not contain IDs because these rules are too tightly coupled with the HTML.  选择不应该包含ID因为这些规则太紧密耦合的HTML
+	"css.lint.idSelector": "ignore",
+
+
+	//-------- Markdown preview configuration --------
+
+	// A list of URLs or local paths to CSS style sheets to use from the markdown preview.
+	"markdown.styles": [],
+
+
+	//-------- Telemetry configuration --------
+
+	// Enable crash reports to be sent to Microsoft.
+	// This option requires restart of VSCode to take effect.
+	"telemetry.enableCrashReporter": true,
+
+
+	//-------- LESS configuration --------
+
+	// Controls LESS validation and problem severities.
+
+	// Enables or disables all validations
+	"less.validate": true,
+
+	// When using a vendor-specific prefix make sure to also include all other vendor-specific properties
+	"less.lint.compatibleVendorPrefixes": "ignore",
+
+	// When using a vendor-specific prefix also include the standard property
+	"less.lint.vendorPrefix": "warning",
+
+	// Do not use duplicate style definitions
+	"less.lint.duplicateProperties": "ignore",
+
+	// Do not use empty rulesets
+	"less.lint.emptyRules": "warning",
+
+	// Import statements do not load in parallel  不要并行加载import语句
+	"less.lint.importStatement": "ignore",
+
+	// Do not use width or height when using padding or border
+	"less.lint.boxModel": "ignore",
+
+	// The universal selector (*) is known to be slow
+	"less.lint.universalSelector": "ignore",
+
+	// No unit for zero needed
+	"less.lint.zeroUnits": "ignore",
+
+	// @font-face rule must define 'src' and 'font-family' properties
+	"less.lint.fontFaceProperties": "warning",
+
+	// Hex colors must consist of three or six hex numbers
+	"less.lint.hexColorLength": "error",
+
+	// Invalid number of parameters
+	"less.lint.argumentsInColorFunction": "error",
+
+	// Unknown property.
+	"less.lint.unknownProperties": "warning",
+
+	// IE hacks are only necessary when supporting IE7 and older
+	"less.lint.ieHack": "ignore",
+
+	// Unknown vendor specific property.
+	"less.lint.unknownVendorSpecificProperties": "ignore",
+
+	// Property is ignored due to the display. E.g. with 'display: inline', the width, height, margin-top, margin-bottom, and float properties have no effect
+	"less.lint.propertyIgnoredDueToDisplay": "warning",
+
+	// Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+	"less.lint.important": "ignore",
+
+	// Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+	"less.lint.float": "ignore",
+
+	// Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+	"less.lint.idSelector": "ignore",
+
+
+	//-------- Sass configuration --------
+
+	// Controls Sass validation and problem severities.
+
+	// Enables or disables all validations
+	"sass.validate": true,
+
+	// When using a vendor-specific prefix make sure to also include all other vendor-specific properties
+	"sass.lint.compatibleVendorPrefixes": "ignore",
+
+	// When using a vendor-specific prefix also include the standard property
+	"sass.lint.vendorPrefix": "warning",
+
+	// Do not use duplicate style definitions
+	"sass.lint.duplicateProperties": "ignore",
+
+	// Do not use empty rulesets
+	"sass.lint.emptyRules": "warning",
+
+	// Import statements do not load in parallel  不要并行加载import语句
+	"sass.lint.importStatement": "ignore",
+
+	// Do not use width or height when using padding or border
+	"sass.lint.boxModel": "ignore",
+
+	// The universal selector (*) is known to be slow
+	"sass.lint.universalSelector": "ignore",
+
+	// No unit for zero needed
+	"sass.lint.zeroUnits": "ignore",
+
+	// @font-face rule must define 'src' and 'font-family' properties
+	"sass.lint.fontFaceProperties": "warning",
+
+	// Hex colors must consist of three or six hex numbers
+	"sass.lint.hexColorLength": "error",
+
+	// Invalid number of parameters
+	"sass.lint.argumentsInColorFunction": "error",
+
+	// Unknown property.
+	"sass.lint.unknownProperties": "warning",
+
+	// IE hacks are only necessary when supporting IE7 and older
+	"sass.lint.ieHack": "ignore",
+
+	// Unknown vendor specific property.
+	"sass.lint.unknownVendorSpecificProperties": "ignore",
+
+	// Property is ignored due to the display. E.g. with 'display: inline', the width, height, margin-top, margin-bottom, and float properties have no effect
+	"sass.lint.propertyIgnoredDueToDisplay": "warning",
+
+	// Avoid using !important. It is an indication that the specificity of the entire CSS has gotten out of control and needs to be refactored.
+	"sass.lint.important": "ignore",
+
+	// Avoid using 'float'. Floats lead to fragile CSS that is easy to break if one aspect of the layout changes.
+	"sass.lint.float": "ignore",
+
+	// Selectors should not contain IDs because these rules are too tightly coupled with the HTML.
+	"sass.lint.idSelector": "ignore",
+
+
+	//-------- TypeScript configuration --------
+
+	// Complete functions with their parameter signature.
+	"typescript.useCodeSnippetsOnMethodSuggest": false,
+
+	// Specifies the folder path containing the tsserver and lib*.d.ts files to use.
+	"typescript.tsdk": null,
+
+
+	//-------- PHP Configuration options --------
+
+	// Points to the php exectuable.
+	"php.validate.executablePath": null,
+
+	// Whether the linter is run on save or on type.
+	"php.validate.run": "onSave"
+
+}

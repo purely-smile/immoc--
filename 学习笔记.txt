@@ -1,6 +1,6 @@
 1. class用.  ID 用#
 2. 从第一层到第五层依次为：border、content+padding、background-image、background-color、margin。
-3. position=位置 absolute绝对 relative：相对 
+3. position=位置 absolute绝对 relative：相对
 4. padding: 1px 20px 37px 30px 分别为上、右、下、左
 5. cssgaga雪碧图，以后要学习具体怎么用。
 6. <link rel="stylesheet" type="text/css" href="css/style.css"> 引用外部样式表
@@ -16,7 +16,7 @@
 16.	table 表格 tr:行；th:表头；td:单元内容。
 17.	class="table table-bordered table-hover"：多个class需要用空格隔开就好了，学习bootstrap知道的
 18.	sublime记不住，但是有用的快捷键
-	Ctrl+X：删除当前行 
+	Ctrl+X：删除当前行
 	alt+shift+w 使用标签包裹一行; 开始输入你想使用的标签
 	ctrl+shift+y计算数学表达式
 	ctrl+shift+d复制行
@@ -39,7 +39,7 @@
                 });
             });
 27.  width    height，切记，一个末尾时th，一个是ht，相反的
-            
+
 28. 数据类型判断
 	typeof 100           "number"
 	typeof true          "boolean"
@@ -59,7 +59,7 @@
 	$("[href]") 选取所有带有 href 属性的元素。
 	$("[href='#']") 选取所有带有 href 值等于 "#" 的元素。
 	$("[href!='#']") 选取所有带有 href 值不等于 "#" 的元素。
-	$("[href$='.jpg']") 选取所有 href 值以 ".jpg" 结尾的元素。 
+	$("[href$='.jpg']") 选取所有 href 值以 ".jpg" 结尾的元素。
 32. background: #00FF00 url(bgimage.gif) no-repeat fixed top;  no-repeat,背景图不重复。
 33. 在《新手引导这里》，由于图省事，遇上了给自己造的最大的bug，demo里面用的是stepA属性，而我一开始排版图省事儿，用的step1，写css的时候忘记了，按照来，结果找了一个小时的bug。
 34. 又遇到个神级bug，<a href=></a>,如果用a标签绑定click事件，千万不要带href，不然每点击一次触发一次刷新。
@@ -71,3 +71,13 @@
 39. var oDate=new Date(); oDate.setDate(oDate.getDate()+30);
 	document.cookie="name=www.open.com.cn;expires="+oDate;
 		设置cookie name=www.open.com.cn，有效期一个月
+40. div.offsetWidth获取元素的宽度；offsetHeight  offsetTop offsetLeft
+41. 获取滚动条Top值，同时取标准模式和混杂模式两种可能
+	var scrollTop=document.body.scrollTop||document.documentElement.scrollTop
+42. var head= document.getElementById("head");
+head.style.cssText="width:200px;height:70px;display:bolck"; 用javascript给head设置宽高
+43. 使用for遍历，需要return结果的话，要在for语句之外return
+44. 书写height和width，长点心吧，别在打反了.
+45. ./ 当前目录
+	../ 父级目录
+	/ 根目录
