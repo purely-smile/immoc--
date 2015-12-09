@@ -81,3 +81,10 @@ head.style.cssText="width:200px;height:70px;display:bolck"; 用javascript给head
 45. ./ 当前目录
 	../ 父级目录
 	/ 根目录
+46. #main>div jQuery中，获取main下面一层的div #main div 获取main下面所有的div
+	$("#main>div").last().get(0) last()获取最后一个元素作为对象，get(0)变为dom元素
+47. offsetHeight获取的是当前元素的高度
+	height()获取的是不包括padding值的，比offsetHeight小
+48. $.inArray(min,Harr) 获取Harr中min的索引位置。
+49. position() 方法返回匹配元素相对于父元素的位置（偏移）。
+	该方法返回的对象包含两个整型属性：top 和 left，以像素计。
