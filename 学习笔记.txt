@@ -88,3 +88,7 @@ head.style.cssText="width:200px;height:70px;display:bolck"; 用javascript给head
 48. $.inArray(min,Harr) 获取Harr中min的索引位置。
 49. position() 方法返回匹配元素相对于父元素的位置（偏移）。
 	该方法返回的对象包含两个整型属性：top 和 left，以像素计。
+50. jQuery焦点图
+51. onselectstart="return false"
+52. <a href="javascript:;"> 阻止浏览器的默认行为。
+53. (function(){})();立即执行函数
