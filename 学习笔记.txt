@@ -92,3 +92,7 @@ head.style.cssText="width:200px;height:70px;display:bolck"; 用javascript给head
 51. onselectstart="return false"
 52. <a href="javascript:;"> 阻止浏览器的默认行为。
 53. (function(){})();立即执行函数
+54. fullpage 全屏滚动
+55. koala中文乱码 Encoding.default_external = Encoding.find('utf-8')
+	D:\Koala\rubygems\gems\sass-3.4.9\lib\sass
+修改 engine.rb 文件 
