@@ -106,3 +106,4 @@ head.style.cssText="width:200px;height:70px;display:bolck"; 用javascript给head
 		函数表达式，在表达式前面不可调用。但是里面的变量声明add会提前。
 		详细讲解http://www.imooc.com/video/6429
 57. 使用switch语句的时候，记得case结束用break，还有最后一句如果还有其他不一样的结果，记得用defaul:break
+58. 如果找不到bug，例如浏览器差异的bug，有可能是browsersync引起的。
