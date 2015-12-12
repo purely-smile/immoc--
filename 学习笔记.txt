@@ -95,4 +95,14 @@ head.style.cssText="width:200px;height:70px;display:bolck"; 用javascript给head
 54. fullpage 全屏滚动
 55. koala中文乱码 Encoding.default_external = Encoding.find('utf-8')
 	D:\Koala\rubygems\gems\sass-3.4.9\lib\sass
-修改 engine.rb 文件 
+修改 engine.rb 文件
+56. 函数{
+		function add(a,b){}   函数声明
+		var add=function(a,b){} 函数表达式
+		var func=function add(){} 命名函数表达式，不常见
+		var func=new Function('a','b','console.log(a+b);'); 构造器生成函数
+		}
+		函数声明会被前置。可以在声明之前调用；
+		函数表达式，在表达式前面不可调用。但是里面的变量声明add会提前。
+		详细讲解http://www.imooc.com/video/6429
+57. 使用switch语句的时候，记得case结束用break，还有最后一句如果还有其他不一样的结果，记得用defaul:break
