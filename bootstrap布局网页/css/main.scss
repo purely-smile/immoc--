@@ -1,24 +1,25 @@
-body{
-	padding-top: 50px;
-	padding-bottom: 40px;
-	color: #5a5a5a;
+*{
+	margin: 0;
+	padding: 0;
+}
+body{//页面的上下间距
+	padding: 50px 0 50px 0;
 }
 
 //轮播广告
 .carousel{
-	height: 500px;
-	margin-bottom: 60px;
-	.item{
+	height: 500px; //轮播图片框架高度
+	margin-bottom: 60px; //和下面内容保持间距
+	.item{//轮播图片设置
 		height: 500px;
-		background-color: #000;
 		img{
-			width: 100%;
+			width: 100%;//图片水平铺满
 		}
 	}
 }
 
 .carousel-caption{
-	z-index: 10;
+	z-index: 10;//设置堆叠顺序
 	p{
 		margin-bottom: 20px;
 		font-size: 20px;
@@ -38,6 +39,8 @@ body{
 //特征
 .feature-divider{
 	margin: 40px 0;
+	border-top:1px solid rgba(30, 30, 30, 0.5);
+
 }
 .feature{
 	padding: 30px 0;
@@ -47,38 +50,5 @@ body{
 	color: #2a6496;
 	.text-muted{
 		font-size: 28px;
-	}
-}
-//响应式布局
-@media(max-width:768px){
-	.summary{
-		padding-right: 3px;
-		padding-left: 3px;
-	}
-	.carousel{
-		height: 300px;
-		margin-bottom: 30px;
-		.item{
-			height: 300px;
-		}
-		img{
-			min-height: 300px;
-		}
-	}
-
-.carousel-caption p{
-	font-size: 16px;
-	line-height: 1.4;
-}
-.feature-heading{
-	font-size: 34px;
-	.text-muted{
-		font-size: 22px;
-	}
-}
-}
-@media(min-width:992px){
-	.feature-heading{
-		margin-top: 120px;
 	}
 }

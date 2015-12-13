@@ -107,3 +107,6 @@ head.style.cssText="width:200px;height:70px;display:bolck"; 用javascript给head
 		详细讲解http://www.imooc.com/video/6429
 57. 使用switch语句的时候，记得case结束用break，还有最后一句如果还有其他不一样的结果，记得用defaul:break
 58. 如果找不到bug，例如浏览器差异的bug，有可能是browsersync引起的。
+	ps:这次还真不是browsersync，原来是火狐上装的adblock Plus这个插件引起的，刚好一个div的class前缀以ad-开头就被杀了。
+60. <hr/>设置颜色，用bored-bottom：1px solid red；
+61. <img src="#" alt=" " title=" ">  alt表示图片不能载入显示的内容。title是鼠标滑过显示的内容。
