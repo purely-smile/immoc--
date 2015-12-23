@@ -1,0 +1,15 @@
+1. 使用PDO操作数据库一定要注意编码格式。
+<?php
+	try{
+		header("Content-type: text/html; charset=utf-8");
+		$pdo=new PDO("mysql:host=localhost;dbname=grape","root","12345");
+		//$pdo->query('set names utf8');
+		//var_dump($pdo);
+	}catch(PDOException $e){
+		echo $e->getMessage();
+	}
+ ?>
+ 2. 数据库只能插入数字的原因，很有可能是字母和汉字没有引号包括；找了好久的bug。一开始以为是编码的问题！
+
+ php中设置mysql语句，如果需要加入变量，应当这么使用，最外层要用双引号，里面用单引号，同时变量需要用大括号
+ $sql="select id,name from name where id='{$id}'";
