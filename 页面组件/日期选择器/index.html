@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日期选择器</title>
+</head>
+<!--引入日期选择器样式-->
+<link rel="stylesheet" href="./pikaday/pikaday.css">
+<body>
+<form action="find_date.php" method="get">
+<input type="text" id="datepicker" name="start">到
+<!-- 日期选择器1 -->
+<input type="text" id="datepicker1" name="end">
+<!-- 日期选择器2 -->
+<input class="btn btn-info" type="submit" value="查询">
+</form>
+
+
+<!--引入日期格式化插件momentjs-->
+    <script src="./pikaday/moment.js"></script>
+    <script src="./pikaday/pikaday.js"></script>
+    <script>
+        //配置第一个选择器为中文样式
+    var picker = new Pikaday({
+        field: document.getElementById('datepicker'),
+        firstDay: 1,
+        minDate: new Date(2015-01-01),
+        maxDate: new Date(2020-12-31),
+        yearRange: [2015, 2020],
+        i18n: {
+            previousMonth: '上个月',
+            nextMonth: '下个月',
+            months: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+            weekdays: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+            weekdaysShort: ['日', '一', '二', '三', '四', '五', '六']
+        }
+    });
+        //配置第二个选择器为中文样式
+        var picker = new Pikaday({
+        field: document.getElementById('datepicker1'),
+        firstDay: 1,
+        minDate: new Date(2015-01-01),
+        maxDate: new Date(2020-12-31),
+        yearRange: [2015, 2020],
+        i18n: {
+            previousMonth: '上个月',
+            nextMonth: '下个月',
+            months: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+            weekdays: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+            weekdaysShort: ['日', '一', '二', '三', '四', '五', '六']
+        }
+    });
+    </script>
+</body>
+</html>

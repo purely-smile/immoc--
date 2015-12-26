@@ -110,3 +110,4 @@ head.style.cssText="width:200px;height:70px;display:bolck"; 用javascript给head
 	ps:这次还真不是browsersync，原来是火狐上装的adblock Plus这个插件引起的，刚好一个div的class前缀以ad-开头就被杀了。
 60. <hr/>设置颜色，用bored-bottom：1px solid red；
 61. <img src="#" alt=" " title=" ">  alt表示图片不能载入显示的内容。title是鼠标滑过显示的内容。
+61. jquery的方法，只能对$()选中的元素起作用；
