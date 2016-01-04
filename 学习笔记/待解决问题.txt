@@ -6,4 +6,9 @@ iframe框架不能正常定位，最后使用了absolute；
 为了获取服务器正确时间，需要修正时区，改用时间戳获取，方便日期的判断处理
 
 php获取月底最后一天的方法，就是获取下个月的0号。
+保存cookie
+$findstart=mktime(0,0,0,$sm,$sd,$sy);
+$findend=mktime(0,0,0,$em,$ed,$ey);
+setcookie("timestart", $findstart,time()+600,"/admin/");
+setcookie("timeend", $findend,time()+600,"/admin/");
 

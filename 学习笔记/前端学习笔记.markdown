@@ -9,7 +9,7 @@
 8. **javasecript打开新的页面**   `window.open('http://www.imooc.com','_blank','width=600 height=400,top=100,left=110')`
 9. **注意height和width的拼写，以及他们中间没符号，还有其他单词的拼写，好多bug都是自己，单词打错了顺序，切记！**
 10.	**调用函数一定后面要带（），之前调试的时候没括号就不行，随后看其他老师的教程，都没有带，也可以，随后要具体分析下;**
-11.	**双引号里面要用单引号,或者单引号内用双引号;**`"<a href='javascript:;' onclick='del(this)' >删除</a>";` 
+11.	**双引号里面要用单引号,或者单引号内用双引号;**`"<a href='javascript:;' onclick='del(this)' >删除</a>";`
 13.	**太难了，留着以后做:**,[javascript切换多标签栏][1];
 13. 通用重置样式表	`reset.css`重置浏览器默认样式显示
 14. 要学会JSON多个数据使用
@@ -17,8 +17,8 @@
 16.	`table 表格 tr:行；th:表头；td:单元内容`。
 17.	**多个class需要用空格隔开就好了，学习bootstrap知道的:** class="table table-bordered table-hover"
 18.	**sublime记不住，但是有用的快捷键**
-> Ctrl+X：删除当前行 	
-alt+shift+w 使用标签包裹一行; 开始输入你想使用的标签 
+> Ctrl+X：删除当前行
+alt+shift+w 使用标签包裹一行; 开始输入你想使用的标签
 ctrl+shift+y计算数学表达式
 > 	ctrl+shift+d复制行 	ctrl+[ 或 ]缩进
 19.	**normalize和reset都是重置样式的:**[详解normalize][2]：
@@ -53,7 +53,7 @@ ctrl+shift+y计算数学表达式
 29. **[看不懂。this的介绍][3]**
 30. **切记字母顺序不要错，好多时候出错都是字母顺序。**
 
-31. jQuery 属性选择器 XPath 
+31. jQuery 属性选择器 XPath
 <pre>
 jQuery 使用 XPath 表达式来选择带有给定属性的元素。
 	$("[href]") 选取所有带有 href 属性的元素。
@@ -69,7 +69,7 @@ jQuery 使用 XPath 表达式来选择带有给定属性的元素。
 37. `var aAs=$("#main a")`;使用jQuery，获取id=main标签的里a标签
 38. `$("a").click(function(){})`  为每个a绑定click事件。
 39. `var currentStep=$(this).parent()`; 获取当前点击的a标签的父元素
-40. `var oDate=new Date();` 
+40. `var oDate=new Date();`
     `oDate.setDate(oDate.getDate()+30);`
 	`document.cookie="name=www.open.com.cn;expires="+oDate;`
 	设置cookie name=www.open.com.cn，有效期一个月
@@ -83,7 +83,7 @@ jQuery 使用 XPath 表达式来选择带有给定属性的元素。
 46. **./ 当前目录
 	../ 父级目录
 	/ 根目录**
-47. `#main>div` jQuery中，获取main下面一层的div 
+47. `#main>div` jQuery中，获取main下面一层的div
 48. `#main div` 获取main下面所有的div
 49. `$("#main>div").last().get(0)`
  last()获取最后一个元素作为对象，get(0)变为dom元素
@@ -111,6 +111,178 @@ jQuery 使用 XPath 表达式来选择带有给定属性的元素。
 	ps:这次还真不是browsersync，原来是火狐上装的**adblock Plus**这个插件引起的，刚好一个div的class前缀以ad-开头就被杀了。
 60. `<hr/>`设置颜色，用`bored-bottom：1px solid red；`
 61. `<img src="#" alt=" " title=" ">`  alt表示图片不能载入显示的内容。title是鼠标滑过显示的内容。
+62. `box-sizing`解决内边距和边框造成的实际宽度比设置的宽度大的问题
+      -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+空数组（[]）和空对象（{}）对应的布尔值，都是true。
+将数组清空的一个有效方法，就是将length属性设为0。
+
+闭包。装对象的私有属性和私有方法 http://javascript.ruanyifeng.com/grammar/function.html#toc15
+function Person(name) {
+  var _age;
+  function setAge(n) {
+    _age = n;
+  }
+  function getAge() {
+    return _age;
+  }
+
+  return {
+    name: name,
+    getAge: getAge,
+    setAge: setAge
+  };
+}
+
+var p1 = person('张三');
+p1.setAge(25);
+p1.getAge() // 25
+
+如果对一个值连续做两次取反运算，等于将其转为对应的布尔值，与Boolean函数的作用相同。!!x
+
+// 等同于
+
+Boolean(x)
+
+这种跳过第二个运算子的机制，被称为“短路”。有些程序员喜欢用它取代if结构，比如下面是一段if结构的代码，就可以用且运算符改写。
+if (i !== 0 ){
+    doSomething();
+}
+
+// 等价于
+
+i && doSomething();
+
+一般情况下，几乎总是使用Object.keys方法，遍历数组的属性。Object.getOwnPropertyNames同时获取不可枚举的属性
+
+new Date()
+可以看到月份从0开始计算，因此1月是0，12月是11。但是，月份里面的天数从1开始计算。
+
+正则表达式
+
+    ^ 表示字符串的开始位置
+    $ 表示字符串的结束位置
+
+
+window.performance.now()。它提供页面加载到命令运行时的已经过去的时间
+
+
+Boolean(undefined) // false
+Boolean(null) // false
+Boolean(0) // false
+Boolean('') // false
+Boolean(NaN) // false
+Boolean(1) // true
+Boolean('false') // true
+Boolean([]) // true
+Boolean({}) // true
+Boolean(function(){}) // true
+Boolean(/foo/) // true
+或者
+!!undefined // false
+!!null // false
+!!0 // false
+!!'' // false
+!!NaN // false
+!!1 // true
+!!'false' // true
+!![] // true
+!!{} // true
+!!function(){} // true
+!!/foo/ // true
+
+对象的get set方法，没有空格
+var o = {
+  get p() {
+    return "getter";
+  },
+  set p(value) {
+    console.log("setter: "+value);
+  }
+}
+
+构造函数之所以叫“构造函数”，就是说这个函数的目的，就是操作上下文对象（即this对象），将其“构造”为需要的样子。如果构造函数的return语句返回的是对象，new命令会返回return语句指定的对象；否则，就会不管return语句，返回构造后的上下文对象。
+
+var Vehicle = function (){
+  this.price = 1000;
+  return 1000;
+};
+
+(new Vehicle()) === 1000
+// false
+但是，如果return语句返回的是一个跟this无关的新对象，new命令会返回这个新对象，而不是this对象。这一点需要特别引起注意。
+var Vehicle = function (){
+  this.price = 1000;
+  return { price: 2000 };
+};
+
+(new Vehicle()).price
+// 2000
+
+
+对象的继承
+function Person(){}
+function Student(){}
+实现student继承person的方法
+Student.prototype=Object.create(Person.prototype)
+ES5以下不支持creat的，可以用一下方法
+if(!Object.creat){
+    Object.creat=function(proto){
+        function F(){};
+        F.prototype=proto;
+        return new F();
+    };
+}
+
+使用typeof检测变量是否定义
+typeof foo !== 'undefined'
+
+转换字符串
+''+10 === '10';
+转换为数字
++'10' === 10;
+转换为布尔型
+!!'foo';   // true
+!!'';      // false
+!!'0';     // true
+!!'1';     // true
+!!'-1'     // true
+!!{};      // true
+!!true;    // true
+
+正则表达式
+/[^#].*/.exec('#hahaha')[0]   //"hahaha"
+[^#]除了#匹配后面
+
+分割字符串
+"get-element-by-id".split("-")
+["get", "element", "by", "id"]
+
+jQuery中
+$("div")[0] === $("div").get(0),不过返回的是DOM对象.
+如果要获取jQuery对象.使用 $("div").eq(0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   [1]: http://www.imooc.com/code/1912
